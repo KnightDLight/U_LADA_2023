@@ -24,22 +24,22 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
     ""name"": ""PlayerActionsMap"",
     ""maps"": [
         {
-            ""name"": ""GameplayActions"",
-            ""id"": ""65f6f62a-c59d-43f8-a22c-9388c08f09bd"",
+            ""name"": ""Gameplay"",
+            ""id"": ""2a351108-3c34-4dd3-a135-317b72937181"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
-                    ""id"": ""2c818029-edf9-474d-894f-e168bbb6292f"",
+                    ""id"": ""80893fbc-7a12-4095-9c45-0270854b37ee"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""CameraMovement"",
+                    ""name"": ""MouseDelta"",
                     ""type"": ""Value"",
-                    ""id"": ""a4a007da-5895-4c80-a6a8-91751b4f71f5"",
+                    ""id"": ""1729c8e5-6d6c-4ac1-a526-b47950aa5b7e"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -49,7 +49,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""d14530dc-ab19-40e9-9f5f-6cd2f2a5a29f"",
+                    ""id"": ""b1564e02-6345-48f0-837d-9ebc8a81f95b"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -60,7 +60,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""6846ee45-4fb4-46d0-93e2-58bf779b3986"",
+                    ""id"": ""fc8aeb5b-cc9d-403e-ab82-6b2e7d099b2c"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -71,7 +71,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""7101e615-2ad9-48dd-8c5e-fcf66f54c3b5"",
+                    ""id"": ""3dc89560-1ccd-461a-a024-d6ec787d3d97"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -82,7 +82,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""138bcf06-5046-4949-ad75-63f47b87dd35"",
+                    ""id"": ""c1b8db56-66ba-4ce0-a1f0-2160b8bbdcf1"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -93,7 +93,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""e3af13e2-db15-401b-8947-a65a5fb1c17c"",
+                    ""id"": ""9421e522-0fd3-410a-89dd-8a732fbe0250"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -104,12 +104,12 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e643ac4f-6704-4708-8bcc-ada63062bc21"",
+                    ""id"": ""fdd6cee5-f2ab-43a0-8be7-f3046c91caa1"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""MouseDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -118,10 +118,10 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // GameplayActions
-        m_GameplayActions = asset.FindActionMap("GameplayActions", throwIfNotFound: true);
-        m_GameplayActions_Movement = m_GameplayActions.FindAction("Movement", throwIfNotFound: true);
-        m_GameplayActions_CameraMovement = m_GameplayActions.FindAction("CameraMovement", throwIfNotFound: true);
+        // Gameplay
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
+        m_Gameplay_MouseDelta = m_Gameplay.FindAction("MouseDelta", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -178,49 +178,49 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // GameplayActions
-    private readonly InputActionMap m_GameplayActions;
-    private IGameplayActionsActions m_GameplayActionsActionsCallbackInterface;
-    private readonly InputAction m_GameplayActions_Movement;
-    private readonly InputAction m_GameplayActions_CameraMovement;
-    public struct GameplayActionsActions
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private IGameplayActions m_GameplayActionsCallbackInterface;
+    private readonly InputAction m_Gameplay_Movement;
+    private readonly InputAction m_Gameplay_MouseDelta;
+    public struct GameplayActions
     {
         private @PlayerActionsMap m_Wrapper;
-        public GameplayActionsActions(@PlayerActionsMap wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_GameplayActions_Movement;
-        public InputAction @CameraMovement => m_Wrapper.m_GameplayActions_CameraMovement;
-        public InputActionMap Get() { return m_Wrapper.m_GameplayActions; }
+        public GameplayActions(@PlayerActionsMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
+        public InputAction @MouseDelta => m_Wrapper.m_Gameplay_MouseDelta;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActionsActions set) { return set.Get(); }
-        public void SetCallbacks(IGameplayActionsActions instance)
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IGameplayActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsActionsCallbackInterface != null)
+            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @Movement.started -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnMovement;
-                @CameraMovement.started -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnCameraMovement;
-                @CameraMovement.performed -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnCameraMovement;
-                @CameraMovement.canceled -= m_Wrapper.m_GameplayActionsActionsCallbackInterface.OnCameraMovement;
+                @Movement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
+                @MouseDelta.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseDelta;
             }
-            m_Wrapper.m_GameplayActionsActionsCallbackInterface = instance;
+            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @CameraMovement.started += instance.OnCameraMovement;
-                @CameraMovement.performed += instance.OnCameraMovement;
-                @CameraMovement.canceled += instance.OnCameraMovement;
+                @MouseDelta.started += instance.OnMouseDelta;
+                @MouseDelta.performed += instance.OnMouseDelta;
+                @MouseDelta.canceled += instance.OnMouseDelta;
             }
         }
     }
-    public GameplayActionsActions @GameplayActions => new GameplayActionsActions(this);
-    public interface IGameplayActionsActions
+    public GameplayActions @Gameplay => new GameplayActions(this);
+    public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnCameraMovement(InputAction.CallbackContext context);
+        void OnMouseDelta(InputAction.CallbackContext context);
     }
 }

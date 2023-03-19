@@ -3,11 +3,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Input Reader", menuName = "Game/Input Reader")]
-public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActionsActions
+public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActions
 {
 	public event UnityAction<Vector2>	MovementEvent = delegate { };
 	public event UnityAction<Vector2>	MoveCameraEvent = delegate { };
-
 	private PlayerActionsMap			_inputMap;
 
 	private void OnEnable()
@@ -15,7 +14,7 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActionsAc
 		if (_inputMap != null)
 			return;
 		_inputMap = new();
-		_inputMap.GameplayActions.SetCallbacks(this);
+		_inputMap.Gameplay.SetCallbacks(this);
 		_inputMap.Enable();
 	}
 
@@ -24,7 +23,7 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActionsAc
 		MovementEvent.Invoke(context.ReadValue<Vector2>());
 	}
 
-	public void OnCameraMovement(InputAction.CallbackContext context)
+	public void OnMouseDelta(InputAction.CallbackContext context)
 	{
 		MoveCameraEvent.Invoke(context.ReadValue<Vector2>());
 	}
