@@ -7,6 +7,7 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActions
 {
 	public event UnityAction<Vector2>	MovementEvent = delegate { };
 	public event UnityAction<Vector2>	MoveCameraEvent = delegate { };
+	public event UnityAction			Interact = delegate { };
 	private PlayerActionsMap			_inputMap;
 
 	private void OnEnable()
@@ -26,5 +27,11 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActions
 	public void OnMouseDelta(InputAction.CallbackContext context)
 	{
 		MoveCameraEvent.Invoke(context.ReadValue<Vector2>());
+	}
+
+	public void OnInteract(InputAction.CallbackContext context)
+	{
+		if (context.action.phase == InputActionPhase.Canceled)
+			Interact.Invoke();
 	}
 }
