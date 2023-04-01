@@ -7,7 +7,8 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActions
 {
 	public event UnityAction<Vector2>	MovementEvent = delegate { };
 	public event UnityAction<Vector2>	MoveCameraEvent = delegate { };
-	public event UnityAction			Interact = delegate { };
+	public event UnityAction			InteractEvent = delegate { };
+	public event UnityAction			SwapSelectionEvent = delegate { };
 	private PlayerActionsMap			_inputMap;
 
 	private void OnEnable()
@@ -32,6 +33,11 @@ public class InputReader : ScriptableObject, PlayerActionsMap.IGameplayActions
 	public void OnInteract(InputAction.CallbackContext context)
 	{
 		if (context.action.phase == InputActionPhase.Canceled)
-			Interact.Invoke();
+			InteractEvent.Invoke();
+	}
+	public void OnSwapSelection(InputAction.CallbackContext context)
+	{
+		if (context.action.phase == InputActionPhase.Canceled)
+			SwapSelectionEvent.Invoke();
 	}
 }

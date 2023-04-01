@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
 	[SerializeField]
-	InputReader _inputEventsReader;
-    InteractionsScanner _interactionsScanner;
-	private void Awake()
+	InputReader				_inputEventsReader;
+	InteractionsSelector _interactionsSelector;
+	void Awake()
 	{
-		_interactionsScanner = GetComponent<InteractionsScanner>();
-		_inputEventsReader.Interact += Interact;
+		_inputEventsReader.InteractEvent += Interact;
+		_interactionsSelector = GetComponent<InteractionsSelector>();
 	}
 
 	private void Interact()
 	{
-		Debug.Log("Interact Input Pressed");
-		var currentInteraction = _interactionsScanner.GetClosestInteractableGameObject();
-		if (currentInteraction == null)
+		IInteractable	interaction;
+		GameObject		currentSelection;
+
+		currentSelection = _interactionsSelector.CurrentSelectedInteraction;
+		interaction = currentSelection.GetComponent<IInteractable>();
+		if (interaction == null)
 			return;
-		currentInteraction.GetComponent<IInteractable>().Interact();
+		interaction.Interact();
 	}
 }

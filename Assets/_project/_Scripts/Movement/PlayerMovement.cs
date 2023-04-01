@@ -1,42 +1,45 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController)), SelectionBase]
 public class PlayerMovement : MonoBehaviour
 {
+	CharacterController	_controller;
+	GroundDetector		_groundDetector;
 	[SerializeField]
-	InputReader _inputEventsReader;
+	InputReader			_inputEventsReader;
 	[SerializeField]
-	Transform _forwardReference;
+	Transform			_forwardReference;
+	Vector2				_movementInput;
 	[SerializeField]
-	float _gravityValue;
-	private CharacterController _controller;
-	private Vector2 _movementInput;
-	private GroundDetector _groundDetector;
+	float				_gravityValue;
 
-	private void RegisterMovementInput(Vector2 movementInput) => _movementInput = movementInput;
+	void RegisterMovementInput(Vector2 movementInput) => _movementInput = movementInput;
 
-	private void Awake()
+	void Awake()
 	{
 		_controller = GetComponent<CharacterController>();
 		_inputEventsReader.MovementEvent += RegisterMovementInput;
 		_groundDetector = GetComponent<GroundDetector>();
 	}
-	private void Update()
+
+	void Update()
 	{
-		Vector3 forward;
-		float ySpeed;
-		Vector3 desiredMovement;
+		Vector3	forward;
+		Vector3	desiredMovement;
+		float	ySpeed;
 
 		forward = CalculatePlayerDesiredForward();
 		ySpeed = CalculateVerticalSpeed();
 		desiredMovement = forward + Vector3.up * ySpeed;
 		ApplyMovement(desiredMovement);
 	}
-	private void ApplyMovement(Vector3 desiredMovement)
+
+	void ApplyMovement(Vector3 desiredMovement)
 	{
 		_controller.Move(desiredMovement * Time.deltaTime);
 	}
-	private float CalculateVerticalSpeed()
+
+	float CalculateVerticalSpeed()
 	{
 		bool isGrounded;
 
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 		return _gravityValue;
 	}
 
-	private Vector3 CalculatePlayerDesiredForward()
+	Vector3 CalculatePlayerDesiredForward()
 	{
 		Vector3 forwardRef;
 		Vector3 rightRef;
@@ -59,6 +62,4 @@ public class PlayerMovement : MonoBehaviour
 		desiredForward.Normalize();
 		return desiredForward;
 	}
-
-	
 }
