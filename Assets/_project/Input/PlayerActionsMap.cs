@@ -62,6 +62,15 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwapOption"",
+                    ""type"": ""Button"",
+                    ""id"": ""a90ceed3-3619-418d-aea8-118799c2b5a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                     ""action"": ""SwapSelection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea4984fe-f30a-410a-8a8a-adab86a3f36f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapOption"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         m_Gameplay_MouseDelta = m_Gameplay.FindAction("MouseDelta", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_SwapSelection = m_Gameplay.FindAction("SwapSelection", throwIfNotFound: true);
+        m_Gameplay_SwapOption = m_Gameplay.FindAction("SwapOption", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +248,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_MouseDelta;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_SwapSelection;
+    private readonly InputAction m_Gameplay_SwapOption;
     public struct GameplayActions
     {
         private @PlayerActionsMap m_Wrapper;
@@ -235,6 +257,7 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         public InputAction @MouseDelta => m_Wrapper.m_Gameplay_MouseDelta;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @SwapSelection => m_Wrapper.m_Gameplay_SwapSelection;
+        public InputAction @SwapOption => m_Wrapper.m_Gameplay_SwapOption;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +279,9 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 @SwapSelection.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapSelection;
                 @SwapSelection.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapSelection;
                 @SwapSelection.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapSelection;
+                @SwapOption.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapOption;
+                @SwapOption.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapOption;
+                @SwapOption.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSwapOption;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +298,9 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                 @SwapSelection.started += instance.OnSwapSelection;
                 @SwapSelection.performed += instance.OnSwapSelection;
                 @SwapSelection.canceled += instance.OnSwapSelection;
+                @SwapOption.started += instance.OnSwapOption;
+                @SwapOption.performed += instance.OnSwapOption;
+                @SwapOption.canceled += instance.OnSwapOption;
             }
         }
     }
@@ -282,5 +311,6 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         void OnMouseDelta(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSwapSelection(InputAction.CallbackContext context);
+        void OnSwapOption(InputAction.CallbackContext context);
     }
 }
