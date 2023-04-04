@@ -16,6 +16,8 @@ public abstract class InteractableObjectWithOptions : InteractableObject, IHasOp
 		b_currentSelection++;
 		if (b_currentSelection >= b_availableOptions.Count)
 			b_currentSelection = 0;
+		Debug.Log($"Opción seleccionada de objeto {gameObject.name} es ahora : {b_availableOptions[b_currentSelection].Name}");
+
 	}
 	public SO_InteractionOption GetCurrentSelection()
 	{

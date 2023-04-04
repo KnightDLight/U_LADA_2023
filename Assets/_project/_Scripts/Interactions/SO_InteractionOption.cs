@@ -11,6 +11,9 @@ public class SO_InteractionOption : ScriptableObject
 	[SerializeField]
 	string _description;
 	public UnityAction OnEventRaised;
+
+	public string Name { get => _name;}
+
 	public void RaiseEvent()
 	{
 		OnEventRaised?.Invoke();

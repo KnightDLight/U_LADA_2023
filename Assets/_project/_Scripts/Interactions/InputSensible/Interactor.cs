@@ -21,5 +21,6 @@ public class Interactor : MonoBehaviour
 		if (interaction == null)
 			return;
 		interaction.Interact();
+		Debug.Log($"Interacted with : " + currentSelection.name);
 	}
 }
