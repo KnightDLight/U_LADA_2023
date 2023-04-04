@@ -23,7 +23,10 @@ public class InteractionArea : MonoBehaviour
 	}
 	private void OnDrawGizmosSelected()
 	{
+		if (_relatedInteractableObjects.Count == 0)
+			return;
 		Gizmos.color = Color.red;
+
 		foreach(GameObject interactable in _relatedInteractableObjects)
 		{
 			Gizmos.DrawLine(transform.position, interactable.transform.position);
