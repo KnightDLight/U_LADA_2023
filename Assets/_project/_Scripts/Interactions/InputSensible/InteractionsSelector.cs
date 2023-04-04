@@ -35,10 +35,9 @@ public class InteractionsSelector : MonoBehaviour
 		_currentSelectionIndex++;
 		if (_currentSelectionIndex > maxIndex)
 			_currentSelectionIndex = 0;
-		target = availableInteractions[_currentSelectionIndex];
 		_highLighter.UnHighLight(_currentSelectedInteraction);
-		_highLighter.Highlight(target);
-		_currentSelectedInteraction = target;
+		Select();
+		
 	}
 
 	private void Update()
@@ -59,12 +58,17 @@ public class InteractionsSelector : MonoBehaviour
 	}
 	private void SelectFirstAvailableInteraction()
 	{
-		GameObject target;
 
 		_currentSelectionIndex = 0;
-		target = availableInteractions[_currentSelectionIndex];
-		_highLighter.Highlight(target);
-		_currentSelectedInteraction = target;
+		Select();
 	}
 
+	private void Select()
+	{
+
+		var target = availableInteractions[_currentSelectionIndex];
+		_highLighter.Highlight(target);
+		_currentSelectedInteraction = target;
+		Debug.Log($"Objetivo seleccionado : " + _currentSelectedInteraction.name);
+	}
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e7cb4bd3bf9d349ba68d832b487373, type: 3}
   m_Name: Mirar
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Mirar
   _description: 
