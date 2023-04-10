@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e825a2d42078ba04b9bfe11305d490ac, type: 3}
-  m_Name: PlayerHasDoneA3Times
+  m_Script: {fileID: 11500000, guid: 3b4cd0ff1d7787c449cd7aebf75f694c, type: 3}
+  m_Name: Event_StartGame
   m_EditorClassIdentifier: 
-  _factToCheck: {fileID: 11400000, guid: 629731a0ee02c0b4e81b8396a60739f0, type: 2}
-  _operation: 0
-  _referenceValue: 3
+  _dataToTransfer: MainMenu

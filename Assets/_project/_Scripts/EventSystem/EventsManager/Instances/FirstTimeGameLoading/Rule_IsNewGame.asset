@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4cd0ff1d7787c449cd7aebf75f694c, type: 3}
-  m_Name: Event_LoadFirstScene
+  m_Script: {fileID: 11500000, guid: 055e99d85d872e34ab7610d539e0f7dd, type: 3}
+  m_Name: Rule_IsNewGame
   m_EditorClassIdentifier: 
-  _dataToTransfer: SampleScene
+  _criterions:
+  - {fileID: 11400000, guid: 22a7adb118516794c9d1e022893bf484, type: 2}

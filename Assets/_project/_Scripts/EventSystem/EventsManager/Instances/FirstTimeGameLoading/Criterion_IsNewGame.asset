@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63b28a4d68abbf4b98e3b0d115908ae, type: 3}
-  m_Name: Times Player Has Done A
+  m_Script: {fileID: 11500000, guid: e825a2d42078ba04b9bfe11305d490ac, type: 3}
+  m_Name: Criterion_IsNewGame
   m_EditorClassIdentifier: 
-  _value: 0
+  _factToCheck: {fileID: 11400000, guid: 4394b796742c59b4e8ecf62b42e2eb6f, type: 2}
+  _operation: 0
+  _referenceValue: 1
