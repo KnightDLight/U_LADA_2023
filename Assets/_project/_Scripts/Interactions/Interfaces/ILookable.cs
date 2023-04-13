@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayFullSphere : InteractableObjectWithOptions
+public interface ILookable
 {
-
+	public void GetLookedAt();
 }

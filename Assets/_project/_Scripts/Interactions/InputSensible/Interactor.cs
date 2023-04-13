@@ -17,6 +17,8 @@ public class Interactor : MonoBehaviour
 		GameObject		currentSelection;
 
 		currentSelection = _interactionsSelector.CurrentSelectedInteraction;
+		if (currentSelection == null)
+			return;
 		interaction = currentSelection.GetComponent<IInteractable>();
 		if (interaction == null)
 			return;
