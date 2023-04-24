@@ -10,5 +10,4 @@ public class CursorStateController : MonoBehaviour
         Cursor.visible = false;
         Debug.Log("Cursor locked here : " + transform.name);
     }
-
 }

@@ -19,6 +19,8 @@ public class InteractionsOptionsSelector : MonoBehaviour
 		GameObject		currentSelection;
 
 		currentSelection = _interactionsSelector.CurrentSelectedInteraction;
+		if (currentSelection == null)
+			return;
 		hasOptions = currentSelection.GetComponent<IHasOptions>();
 		if (hasOptions == null)
 			return;

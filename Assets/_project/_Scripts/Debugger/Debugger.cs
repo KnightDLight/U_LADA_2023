@@ -31,7 +31,7 @@ using UnityEngine;
         {
            // if (!Application.isEditor) //Do not display in editor ( or you can use the UNITY_EDITOR macro to also disable the rest)
             {
-                myLog = GUI.TextArea(new Rect(10, 320, Screen.width - 300, Screen.height - 300), myLog);
+                myLog = GUI.TextArea(new Rect(10, 320, Screen.width - 300, Screen.height - 700), myLog);
             }
         }
         //#endif
