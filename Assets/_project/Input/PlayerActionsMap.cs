@@ -214,6 +214,164 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menus"",
+            ""id"": ""3e027fc8-ef9b-4a63-8290-42bebb548d10"",
+            ""actions"": [
+                {
+                    ""name"": ""Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""501c490e-97a9-470d-9a53-247c54beebb4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""ff2a0deb-8cfd-4210-b0e3-3cfb6af974c3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""db0aeedf-a96b-42e6-a8d9-354a8c525418"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1fb387e9-bc1d-4c34-9033-9cd83347bb68"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""98cdbd5e-be4a-4eb0-a714-d3e97b5901f2"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""94345c4d-06c0-4f13-af1b-a210c1593023"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a1011d08-9caa-4ec8-ac81-5de98adba671"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ac12eb2c-1ad9-45c4-a264-b3b4c77ff618"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e960d10d-bdfb-472e-903e-06112cc18a43"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""229f3f6b-942a-485d-9e93-ede26c44c3a4"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5f9b4606-1ff7-4921-83d8-85e864dff788"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""9055d974-19f0-4d0f-a492-a3a224d97771"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e5f1d665-9f94-4340-84f8-afb0d3d3428e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f45bd28c-bcef-4b02-99c9-45a0510c4308"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -227,6 +385,10 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         m_Gameplay_SwapOption = m_Gameplay.FindAction("SwapOption", throwIfNotFound: true);
         m_Gameplay_OpenInventory = m_Gameplay.FindAction("OpenInventory", throwIfNotFound: true);
         m_Gameplay_LookAt = m_Gameplay.FindAction("LookAt", throwIfNotFound: true);
+        // Menus
+        m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
+        m_Menus_Accept = m_Menus.FindAction("Accept", throwIfNotFound: true);
+        m_Menus_Movement = m_Menus.FindAction("Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -363,6 +525,47 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Menus
+    private readonly InputActionMap m_Menus;
+    private IMenusActions m_MenusActionsCallbackInterface;
+    private readonly InputAction m_Menus_Accept;
+    private readonly InputAction m_Menus_Movement;
+    public struct MenusActions
+    {
+        private @PlayerActionsMap m_Wrapper;
+        public MenusActions(@PlayerActionsMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Accept => m_Wrapper.m_Menus_Accept;
+        public InputAction @Movement => m_Wrapper.m_Menus_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_Menus; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenusActions set) { return set.Get(); }
+        public void SetCallbacks(IMenusActions instance)
+        {
+            if (m_Wrapper.m_MenusActionsCallbackInterface != null)
+            {
+                @Accept.started -= m_Wrapper.m_MenusActionsCallbackInterface.OnAccept;
+                @Accept.performed -= m_Wrapper.m_MenusActionsCallbackInterface.OnAccept;
+                @Accept.canceled -= m_Wrapper.m_MenusActionsCallbackInterface.OnAccept;
+                @Movement.started -= m_Wrapper.m_MenusActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_MenusActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_MenusActionsCallbackInterface.OnMovement;
+            }
+            m_Wrapper.m_MenusActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Accept.started += instance.OnAccept;
+                @Accept.performed += instance.OnAccept;
+                @Accept.canceled += instance.OnAccept;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+            }
+        }
+    }
+    public MenusActions @Menus => new MenusActions(this);
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -372,5 +575,10 @@ public partial class @PlayerActionsMap : IInputActionCollection2, IDisposable
         void OnSwapOption(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnLookAt(InputAction.CallbackContext context);
+    }
+    public interface IMenusActions
+    {
+        void OnAccept(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
     }
 }

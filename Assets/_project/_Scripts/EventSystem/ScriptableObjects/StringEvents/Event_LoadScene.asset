@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b4cd0ff1d7787c449cd7aebf75f694c, type: 3}
-  m_Name: Event_StartGame
+  m_Name: Event_LoadScene
   m_EditorClassIdentifier: 
-  _dataToTransfer: MainMenu
+  _dataToTransfer: 

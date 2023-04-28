@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c25b72c034850409a4934fab66e37f, type: 3}
   m_Name: Void Rule A
   m_EditorClassIdentifier: 
-  _criterions:
-  - {fileID: 11400000, guid: c3986bec26e78554c8e5b5e00a3cbc8e, type: 2}
+  _criterions: []

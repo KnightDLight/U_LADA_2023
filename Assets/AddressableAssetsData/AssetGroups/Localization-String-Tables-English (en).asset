@@ -16,28 +16,10 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 49ecc0045f371f14da506c2b4c062a0c
-  m_SerializeEntries:
-  - m_GUID: da71e04cd55b17440a89c4f4aa06b79d
-    m_Address: CharacterNames_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
-    <IsFolder>k__BackingField: 0
-    <BundleFileId>k__BackingField: 
-    <IsInResources>k__BackingField: 0
-    <IsInSceneList>k__BackingField: 0
-    <IsSubAsset>k__BackingField: 0
-    m_CheckedIsScene: 0
-    m_IsScene: 0
-    m_cachedAssetPath: Assets/_project/Localizattion/UnityLocalizationTables/CharacterNames/CharacterNames_en.asset
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e7ae29aa6b7349047b2d3dad36e75fa9, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 702bb71664892e7409e7366db70d3d72, type: 2}
     - {fileID: 11400000, guid: bfebb434a135f5a48aea5b95d63e84ef, type: 2}
-  m_FolderEntryCache: []
-  m_AssetCollectionEntryCache: []

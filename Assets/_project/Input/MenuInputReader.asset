@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b4cd0ff1d7787c449cd7aebf75f694c, type: 3}
-  m_Name: Event_LoadMainMenu
+  m_Script: {fileID: 11500000, guid: a8f361631f4ee424ba97c4a0b9dcbab5, type: 3}
+  m_Name: MenuInputReader
   m_EditorClassIdentifier: 
-  _dataToTransfer: MainMenu
